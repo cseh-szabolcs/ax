@@ -1,3 +1,7 @@
+###> app ###
+/.idea
+/local/
+###< app ###
 
 ###> symfony/framework-bundle ###
 /.env.local
