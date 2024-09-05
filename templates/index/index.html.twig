@@ -1,0 +1,175 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="w-100 text-center">
+        <div class="main-container d-flex h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto pb-5">
+                <div class="inner">
+                    <h3 class="masthead-brand">Ax</h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="#">Register</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main role="main" class="inner main py-5" x-data="{login: false}">
+                <template x-if="!login">
+                    <div>
+                        <h1 class="main-heading">
+                            Keep your stuff together.
+                        </h1>
+                        <p class="lead">
+                            Cover is a one-page template for building simple and beautiful home pages.
+                            Download, edit the text, and add your own fullscreen background photo
+                            to make it your own.
+                        </p>
+                        <div class="pt-2 pb-3">
+                            <hr />
+                        </div>
+                        <p class="lead">
+                            <h3 @click="login = true" class="cursor-pointer">
+                                Login &raquo;
+                            </h3>
+                        </p>
+                    </div>
+                </template>
+                <template x-if="login">
+                    <form class="form-signin">
+                        <div class="mb-4">
+                            <label for="inputEmail" class="sr-only">
+                                Email address
+                            </label>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+                            <label for="inputPassword" class="sr-only">
+                                Password
+                            </label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
+                        </div>
+                        <button class="btn btn-lg btn-secondary px-5" type="submit">
+                            Login
+                        </button>
+                    </form>
+                </template>
+            </main>
+
+            <footer class="mt-auto pt-5">
+                <div class="inner">
+                    <p>Powered by <a href="https://nano-script.com/">nano-script.com</a>.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    a,
+    a:focus,
+    a:hover {
+        color: #fff;
+    }
+    .btn-secondary,
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+        color: #1b66a5;
+        text-shadow: none;
+        background-color: #fff;
+        border: .05rem solid #fff;
+    }
+    html,
+    body {
+        display: grid;
+        background-color: #1b66a5;
+        min-height: 100%;
+        height: auto;
+    }
+    body {
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        color: #fff;
+        text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .6);
+        box-shadow: inset 0 0 5rem rgba(0, 0, 0, .3);
+    }
+    .main-container {
+        max-width: 42em;
+    }
+    .masthead {
+        margin-bottom: 2rem;
+    }
+    .masthead-brand {
+        margin-bottom: 0;
+    }
+    .nav-masthead .nav-link {
+        padding: .25rem 0;
+        font-weight: 700;
+        color: #f3f3f3;
+        background-color: transparent;
+        border-bottom: .25rem solid transparent;
+    }
+    .nav-masthead .nav-link:hover,
+    .nav-masthead .nav-link:focus {
+        border-bottom-color: #f3f3f3;
+    }
+    .nav-masthead .nav-link + .nav-link {
+        margin-left: 1rem;
+    }
+    .nav-masthead .active {
+        color: #fff;
+        border-bottom-color: #fff;
+    }
+    @media (min-width: 48em) {
+        .masthead-brand {
+            float: left;
+        }
+        .nav-masthead {
+            float: right;
+        }
+    }
+    .main {
+        width: 100%;
+        padding: 0 1.5rem;
+    }
+    .main .btn-lg {
+        padding: .75rem 1.25rem;
+        font-weight: 700;
+    }
+    footer {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    .form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+    .form-signin .checkbox {
+        font-weight: 400;
+    }
+    .form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .form-signin .form-control:focus {
+        z-index: 2;
+    }
+    .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+</style>
+{% endblock %}
